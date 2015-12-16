@@ -15,8 +15,8 @@ class GameWindow < Gosu::Window
     @mobs = Array.new
     @stagenumber = 1
     @cooldown = 0
-	@mob_score = 0
-	@lazers = []
+		@mob_score = 0
+		@lazers = []
 	end
 
 	def update
@@ -40,6 +40,7 @@ class GameWindow < Gosu::Window
 		@player.player_dead?
 		if @player.player_dead == 1
 			close
+			print "Your score was #{@mob_score}!"
 		end
 		if Gosu::button_down? Gosu::KbSpace
 			if @cooldown == 0
